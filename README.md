@@ -22,36 +22,49 @@ The goal of this project is to systematically collect trending topics across all
 - **Clean Output:** Generates structured JSON data with timestamps.
 
 ## ⚙️ Prerequisites
-- Python 3.8 or higher
-- [Playwright](https://playwright.dev/python/docs/intro)
+The following software is required to run this project:
+- **Python 3.8+**: If you don't have Python installed:
+  - **macOS**: `brew install python` (Requires [Homebrew](https://brew.sh/)) or download from [python.org](https://www.python.org/downloads/macos/).
+  - **Windows**: Download the installer from [python.org](https://www.python.org/downloads/windows/) and ensure you check **"Add Python to PATH"** during installation.
+  - **Linux**: `sudo apt update && sudo apt install python3 python3-venv` (Ubuntu/Debian).
 
-## 🚀 Installation
+## 🚀 Installation & Rapid Start
 
+### The Quickest Way (Linux/macOS)
+We provide a helper script that handles environment setup, dependencies, and execution in one go:
+```bash
+chmod +x run.sh
+./run.sh
+```
+
+### Manual Installation (All Platforms)
 1. **Clone the repository:**
    ```bash
    git clone <repository-url>
    cd tweetrends
    ```
 
-2. **Create a virtual environment (Recommended):**
+2. **Create a virtual environment:**
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows use: venv\Scripts\activate
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
 3. **Install dependencies:**
    ```bash
    pip install -r requirements.txt
-   ```
-
-4. **Install Playwright browsers:**
-   ```bash
    playwright install chromium
    ```
 
 ## 🛠 Usage
 
-Run the scraper with default settings:
+### Using the script (macOS/Linux):
+```bash
+./run.sh                # Standard run
+./run.sh --no-headless  # Debug mode (visible browser)
+```
+
+### Using Python directly:
 ```bash
 python scraper.py
 ```
